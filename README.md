@@ -11,8 +11,8 @@ use ProcessPool\ProcessPool;
 use Symfony\Component\Process\Process;
 
 function processGenerator($count) {
-    for ($i = 0; $i < 10; $i++) {
-        yield new Process("sleep $i");
+    for ($i = 0; $i < $count; $i++) {
+        yield new Process(['sleep', $i]);
     }
 }
 
