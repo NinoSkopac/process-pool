@@ -21,3 +21,10 @@ $pool = new ProcessPool($processes);
 $pool->setConcurrency(2);
 $pool->wait();
 ```
+
+# Getting output example
+```php
+$pool->onProcessFinished(function(ProcessFinished $processFinished) {
+    print trim($processFinished->getProcess()->getOutput());
+});
+```
